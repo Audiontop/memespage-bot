@@ -158,4 +158,4 @@ bot.on('ready', () => {
     bot.user.setActivity('t!help', { type: 'PLAYING'}).catch(console.error)
 })
 
-bot.login(process.env.token);
+bot.login(process.env.token)
