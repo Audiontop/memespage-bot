@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const PREFIX = 't!';
-const TOKEN = 'ODIyOTMwNDk1Nzk2MTUwMjkz.YFZbvw.IdelcSsNIdcSOwWVhVW-8zdu52Y'
 
 
 bot.on('message', function(message){
@@ -159,4 +158,4 @@ bot.on('ready', () => {
     bot.user.setActivity('t!help', { type: 'PLAYING'}).catch(console.error)
 })
 
-bot.login(TOKEN);
+bot.login(process.env.token);
