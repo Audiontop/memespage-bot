@@ -10,7 +10,10 @@ bot.on("message", function(message) {
         message.channel.send("Wenn OlivenÖl aus Oliven gemacht wird woraus wird dann BabyÖl gemacht Oh, mein Gott!")
     }
     if(change == 0) {
-        message.channel.send("")
+        message.channel.send("Was ist Rot und schlecht für die Zähne Ein Ziegelstein.")
+    }
+    if(change == 2) {
+        message.channel.send("Habe ich gesagt Mülltonne öffne dich , oder warum redest du mit mir")
     }}
 });
 
