@@ -18,7 +18,7 @@ bot.on("message", function(message) {
     if(change == 4) {
         message.channel.send("14 jähriger auf Partys, wenn man denen Apfelschorle gibt und sagt es wäre Bier")
     }
-    if(change == 0) {
+    if(change == 5) {
         message.channel.send("Natürlich Spreche ich mit mir Selbst. Manchmal brauche ich eine Kompetente Beratung...")
     }}
 });
