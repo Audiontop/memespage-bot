@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const PREFIX = 't!';
 
-
 bot.on('message', function(message){
     if(message.content === 't!f'){
 
@@ -11,9 +10,8 @@ bot.on('message', function(message){
     }
 });
 
-
 bot.on('message', function(message){
-    if(message.content === 't!meme'){
+    if(message.content === 't!f'){
 
 
         message.channel.send("für fortnäit :fist::fist::french_bread::croissant:")
