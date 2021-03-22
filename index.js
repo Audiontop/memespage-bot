@@ -2,12 +2,16 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const PREFIX = 't!';
 
-bot.on('message', function(message){
-    if(message.content === 't!f'){
+bot.on("message", function(message) {
+    if(message.content === "t!meme"){
+    var change = Math.floor(Math.random() * 3)
 
-
-        message.channel.send("für fortnäit :fist::fist::french_bread::croissant:")
+    if(change == 1) {
+        message.channel.send("Wenn OlivenÖl aus Oliven gemacht wird woraus wird dann BabyÖl gemacht Oh, mein Gott!")
     }
+    if(change == 0) {
+        message.channel.send("")
+    }}
 });
 
 bot.on('message', function(message){
