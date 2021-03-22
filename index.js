@@ -2,6 +2,22 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const PREFIX = 't!';
 
+bot.on('message', function(message){
+    if(message.content === 'Sheesh'){
+
+
+        message.channel.send("sheeeeeeesh")
+    }
+});
+
+bot.on('message', function(message){
+    if(message.content === 'sheesh'){
+
+
+        message.channel.send("sheeeeeeesh")
+    }
+});
+
 bot.on("message", function(message) {
     if(message.content === "t!meme"){
     var change = Math.floor(Math.random() * 5)
