@@ -9,16 +9,16 @@ bot.on("message", function(message) {
     if(change == 1) {
         message.channel.send("Wenn OlivenÖl aus Oliven gemacht wird woraus wird dann BabyÖl gemacht Oh, mein Gott!")
     }
-    if(change == 1) {
+    if(change == 2) {
         message.channel.send("Was ist Rot und schlecht für die Zähne Ein Ziegelstein.")
     }
-    if(change == 1) {
+    if(change == 3) {
         message.channel.send("Habe ich gesagt Mülltonne öffne dich , oder warum redest du mit mir")
     }
-    if(change == 1) {
+    if(change == 4) {
         message.channel.send("14 jähriger auf Partys, wenn man denen Apfelschorle gibt und sagt es wäre Bier")
     }
-    if(change == 1) {
+    if(change == 5) {
         message.channel.send("Natürlich Spreche ich mit mir Selbst. Manchmal brauche ich eine Kompetente Beratung...")
     }}
 });
