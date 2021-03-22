@@ -12,10 +12,10 @@ bot.on("message", function(message) {
     if(change == 2) {
         message.channel.send("Was ist Rot und schlecht für die Zähne Ein Ziegelstein.")
     }
-    if(change == 0) {
+    if(change == 3) {
         message.channel.send("Habe ich gesagt Mülltonne öffne dich , oder warum redest du mit mir")
     }
-    if(change == 0) {
+    if(change == 4) {
         message.channel.send("14 jähriger auf Partys, wenn man denen Apfelschorle gibt und sagt es wäre Bier")
     }
     if(change == 0) {
