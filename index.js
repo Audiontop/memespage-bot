@@ -4,7 +4,7 @@ const PREFIX = 't!';
 
 bot.on("message", function(message) {
     if(message.content === "t!meme"){
-    var change = Math.floor(Math.random() * 3)
+    var change = Math.floor(Math.random() * 5)
 
     if(change == 1) {
         message.channel.send("Wenn OlivenÖl aus Oliven gemacht wird woraus wird dann BabyÖl gemacht Oh, mein Gott!")
