@@ -11,6 +11,12 @@ bot.on('message', function(message){
 });
 
 bot.on("message", message => {
+    if(message.content.startsWith('t!ping')){
+        message.channel.send('Pong! Sein Ping ist:'+bot.ws.ping+"ms");
+    }
+})
+
+bot.on("message", message => {
     if(message.content === 't!Ping'){
         message.channel.send('Pong! Dein Ping ist:'+bot.ws.ping+"ms");
     }
