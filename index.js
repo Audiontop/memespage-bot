@@ -126,23 +126,6 @@ bot.on('message', function(message){
     }
 });
 
-
-bot.on('message', function(message){
-    if(message.content === 'hallo'){
-
-
-        message.channel.send("Hallo züruck!")
-    }
-});
-
-bot.on('message', function(message){
-    if(message.content === 'Hallo'){
-
-
-        message.channel.send("Hallo züruck!")
-    }
-});
-
 bot.on('message', function(message){
     if (message.content === "t!clear") {
          if(!message.member.hasPermission("MANAGE_MESSAGES")){
