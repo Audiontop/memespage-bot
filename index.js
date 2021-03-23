@@ -10,6 +10,20 @@ bot.on('message', function(message){
     }
 });
 
+bot.on("message", message => {
+    if(message.content === 't!Ping'){
+        message.channel.send('Pong! Dein Ping ist:'+bot.ws.ping+"ms");
+    }
+
+})
+
+bot.on("message", message => {
+    if(message.content === 't!ping'){
+        message.channel.send('Pong! Dein Ping ist:'+bot.ws.ping+"ms");
+    }
+
+})
+
 bot.on('message', function(message){
     if(message.content === 'sheesh'){
 
@@ -45,12 +59,6 @@ bot.on('message', function(message){
 
         message.channel.send("für fortnäit :fist::fist::french_bread::croissant:")
     }
-});
-
-bot.on('message', message => {
-	if (message.content === 't!ping') {
-		message.channel.send('Pong!');
-	}
 });
 
 bot.on('message', function(message){
