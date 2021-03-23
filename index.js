@@ -1,6 +1,44 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
+const got = require('got');
 const PREFIX = 't!';
+
+bot.on('message', message => {
+    if (message.content === "?meme"){
+        const embed = new Discord.MessageEmbed()
+        got('https://www.reddit.com/r/memes/random/.json').then(response => {
+            let content = JSON.parse(response.body);
+            let permalink = content[0].data.children[0].data.permalink;
+            let memeUrl = `https://reddit.com${permalink}`;
+            let memeImage = content[0].data.children[0].data.url;
+            let memeTitle = content[0].data.children[0].data.title;
+            let memeUpvotes = content[0].data.children[0].data.ups;
+            let memeDownvotes = content[0].data.children[0].data.downs;
+            let memeNumComments = content[0].data.children[0].data.num_comments;
+            embed.setTitle(`${memeTitle}`)
+            embed.setURL(`${memeUrl}`)
+            embed.setImage(memeImage)
+            embed.setColor('RANDOM')
+            embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
+            message.channel.send(embed);
+        })
+    }
+})
+
+bot.on("message", message => {
+    if(message.content === ('t!userinfo')){
+	message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+    }
+})
+
+
+
+bot.on("message", message => {
+    if(message.content === ('t!server')){
+            message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+        }
+}
+);
 
 bot.on('message', function(message){
     if(message.content === 'Sheesh'){
