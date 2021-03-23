@@ -16,13 +16,6 @@ bot.on("message", message => {
     }
 })
 
-bot.on("message", message => {
-    if(message.content === 't!ping'){
-        message.channel.send('Pong! Dein Ping ist:'+bot.ws.ping+"ms");
-    }
-
-})
-
 bot.on('message', function(message){
     if(message.content === 'sheesh'){
 
