@@ -215,7 +215,7 @@ bot.on('message', message => {
     let parts = message.content.split(" ");
     
         if (parts[0] == 't!help') {
-            message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **t!ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **t!purge** oder **t!clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **t!memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **t!ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **t!botinfo** kannst du dir infos über Bots von **RappyTV#8287** anschauen!\nMit **t!rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!')
+            message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **t!ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **t!purge** oder **t!clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **t!memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **t!ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **t!f** kommt das **für fortnäit :fist::fist::french_bread::croissant:** anschauen!\nMit **t!rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!')
         }
         else if (parts[0] == 't!ping') {
             message.channel.send('Pong!')
