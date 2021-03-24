@@ -3,8 +3,50 @@ const bot = new Discord.Client();
 const got = require('got');
 const PREFIX = 't!';
 
+const chance = '801465438605148250'
+
+const Test1 = '780778619193655326';
+const Test2 = '780778644045692959';
+const Test3 = '780778675968278538';
+
+var version = '1.0.2';
+
+bot.on('ready', () => {
+    console.log('Der Bot ist nun Einsatzbereit!')
+
+    let statuses = [
+        `t!help`,
+        `memes____page auf tt`,
+        `t!ownerinfo`,
+        `t!help`,
+        `t!userinfo`,
+        `?meme`
+    ]
+
+    setInterval(function(){
+        let status = statuses[Math.floor(Math.random() * statuses.length)];
+        bot.user.setActivity(status, {type: 'PLAYING'}).catch(console.error);
+    }, 3000)
+})
+
+bot.on('message', function(message){
+    if(message.content === 'Agent'){
+
+
+        message.channel.send("𝕒𝕘𝕖𝕟𝕥 𝕧𝕚𝕡𝕖𝕣 ᴮᴬᴰʙᴏʏツ ist der beste")
+    }
+});
+
+bot.on('message', function(message){
+    if(message.content === 'agent'){
+
+
+        message.channel.send("𝕒𝕘𝕖𝕟𝕥 𝕧𝕚𝕡𝕖𝕣 ᴮᴬᴰʙᴏʏツ ist der beste")
+    }
+});
+
 bot.on('message', message => {
-    if (message.content === "?meme"){
+    if (message.content === "t!meme"){
         const embed = new Discord.MessageEmbed()
         got('https://www.reddit.com/r/memes/random/.json').then(response => {
             let content = JSON.parse(response.body);
@@ -48,12 +90,6 @@ bot.on('message', function(message){
     }
 });
 
-bot.on("message", message => {
-    if(message.content.startsWith('t!ping')){
-        message.channel.send('Pong! Dein Ping ist:'+bot.ws.ping+"ms");
-    }
-})
-
 bot.on('message', function(message){
     if(message.content === 'sheesh'){
 
@@ -62,26 +98,12 @@ bot.on('message', function(message){
     }
 });
 
-bot.on("message", function(message) {
-    if(message.content === "t!meme"){
-    var change = Math.floor(Math.random() * 5)
+bot.on("message", message => {
+    if(message.content.startsWith('t!ping')){
+        message.channel.send('Pong! Dein Ping ist:'+bot.ws.ping+"ms");
+    }
 
-    if(change == 1) {
-        message.channel.send("Wenn OlivenÖl aus Oliven gemacht wird woraus wird dann BabyÖl gemacht Oh, mein Gott!")
-    }
-    if(change == 2) {
-        message.channel.send("Was ist Rot und schlecht für die Zähne Ein Ziegelstein.")
-    }
-    if(change == 3) {
-        message.channel.send("Habe ich gesagt Mülltonne öffne dich , oder warum redest du mit mir")
-    }
-    if(change == 4) {
-        message.channel.send("14 jähriger auf Partys, wenn man denen Apfelschorle gibt und sagt es wäre Bier")
-    }
-    if(change == 5) {
-        message.channel.send("Natürlich Spreche ich mit mir Selbst. Manchmal brauche ich eine Kompetente Beratung...")
-    }}
-});
+})
 
 bot.on('message', function(message){
     if(message.content === 't!f'){
@@ -187,7 +209,7 @@ bot.on('message', function(message){
 
 bot.on("message", function(message) {
     if(message.content === "t!flip"){
-    var change = Math.floor(Math.random() * 2)
+    var change = Math.floor(Math.random() * 3)
 
     if(change == 1) {
         message.channel.send("Deine Münze zeigt Kopf")
@@ -195,15 +217,194 @@ bot.on("message", function(message) {
     if(change == 0) {
         message.channel.send("Deine Münze zeigt Zahl")
     }}
+});
+
+bot.on('message', message => {
+    let parts = message.content.split(" ");
+    
+        if (parts[0] == 't!help') {
+            message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **t!ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **t!purge** oder **t!clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **t!memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **t!ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **t!botinfo** kannst du dir infos über Bots von **RappyTV#8287** anschauen!\nMit **t!rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!')
+        }
+        else if (parts[0] == 't!ping') {
+            message.channel.send('Pong!')
+        }
+        else if (parts[0] == 't!Ping') {
+            message.channel.send('Pong!')
+        }
+        else if (parts[0] == 't!clear') {
+            if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Dir fehlt die benötigte Berechtigung! (MANAGE_MESSAGES)')
+            if(!parts[1]) return message.channel.send('Fehler, bitte zweites Argument angeben!')
+            message.channel.bulkDelete(parts[1])
+        }
+        else if (parts[0] == 't!ownerinfo') {
+            message.channel.send(`Der Owner/Ersteller dieses Servers ist ${message.guild.owner}`)
+        }
+        else if (parts[0] == 't!rolleninfo') {
+            if (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send('Dir fehlt folgende Berechtigung: MANAGE_ROLES !')
+            console.log(message.guild.roles)
+            message.channel.send('Die Rolleninfo wurde an den Log geschickt!')
+        }
+        else if (message.content === '822930495796150293') {
+
+            const baum = new Discord.MessageEmbed()
+            .setTitle('Man hat mich gerufen ...')
+            .setColor('#98c9c3')
+            .addField('**Brauchst du Hilfe?**', 'Dann schreibe das Team, oder den Owner an!')
+            .addField('Willst du dem Owner eine DM schreiben?', 'Hier seine DC#ID: RappyTV#8287')
+
+            message.channel.send(baum)
+        }
+        else if (parts[0] == 't!userinfo') {
+            let userr = message.mentions.users.first() || message.author;
+        
+                let userinfo = {}
+        
+                userinfo.name = userr.username;
+                userinfo.discrim = userr.discriminator;
+                userinfo.id = userr.id;
+                userinfo.status = userr.presence.status;
+                userinfo.bot = userr.bot;
+                userinfo.create = userr.createdAt;
+        
+                const userembed = new Discord.MessageEmbed()
+                .setAuthor(userr.tag)
+                .setColor("RANDOM")
+                .addField("Nutzername:", userinfo.name, true)
+                .addField("#ID:", userinfo.discrim, true)
+                .addField("User ID:", userinfo.id, false)
+                .addField("Status:", userinfo.status, true)
+                .addField("Bot:", userinfo.bot, true)
+                .addField('Sorry,', 'dass "Status" nicht geht xd ...')
+        
+                return message.channel.send(userembed)
+                
+        }
+        else if (parts[0] == 't!say') {
+            if (!parts[1]) return message.channel.send('Du musst angeben, was der Text sein soll, den der Bot sagt!')
+            var text = message.content.split(" ").slice(1).join(" ");
+            message.delete();
+            message.channel.send(text)
+        }
+        else if (parts[0] == 't!sayemb') {
+            if(!parts[1]) return message.channel.send('Du musst angeben, was der Text von deinem Embed beinhalten soll!')
+            var text = message.content.split(" ").slice(1).join(" ");
+            message.delete();
+
+            const sayembed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .addField(message.member.displayName + ' schreit:', text, true)
+            .setFooter('Dies ist ein Ausruf von ' + message.author.username + '#' + message.author.discriminator + ' !')
+
+            message.channel.send(sayembed)
+        }
+        else if (parts[0] == 't!dm') {
+            if (!message.mentions.users.first()) {
+                if (!parts[1]) return message.channel.send('Du musst angeben, was du dir selbst schreiben lassen möchtest!')
+                message.delete()
+                var text = message.content.split(" ").slice(1).join(" ");
+
+                message.author.send(text)
+            }
+            else if (message.mentions.users.first()) {
+                if (!parts[1]) return message.channel.send('Du musst angeben, wem du etwas schreiben lassen willst!')
+                if (!parts[2]) return message.channel.send('Du musst angeben, was du deinem Ziel schicken lassen willst!')
+
+                message.delete()
+                var text = message.content.split(" ").slice(2).join(" ");
+
+                message.mentions.users.first().send(text)
+            }
+        }
+        else if (parts[0] == 't!kick') {
+
+            if (!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send('Dir fehlt folgende Berechtigung: KICK_MEMBERS')
+
+            let kicked = message.mentions.members.first();
+            if (!kicked) return message.channel.send('Der angegebene User ist nicht auf diesem Server!')
+
+            message.guild.member(kicked).kick();
+
+            const kickemb = new Discord.MessageEmbed()
+            .setColor('RED')
+            .addField(`Der User`, `${message.mentions.members.first()} wurde erfolgreich gekickt!`)
+            .setFooter(`Der Kick wurde von ${message.author.username}#${message.author.discriminator} ausgeführt!`)
+
+            message.channel.send(kickemb)
+        }
+        else if (parts[0] == 't!ban') {
+
+            if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('Dir fehlt folgende Berechtigung: BAN_MEMBERS')
+
+            let banned = message.mentions.members.first();
+            if (!banned) return message.channel.send('Der angegebene User ist nicht auf diesem Server!')
+
+            message.guild.member(banned).ban();
+
+            const banemb = new Discord.MessageEmbed()
+            .setColor('RED')
+            .addField(`Der User`, `${message.mentions.members.first()} wurde erfolgreich gebannt!`)
+            .setFooter(`Der Ban wurde von ${message.author.username}#${message.author.discriminator} ausgeführt!`)
+
+            message.channel.send(banemb)
+        }
+    
+
 })
 
+bot.on('message', (message) => {
+    const parts = message.content.split(" ");
 
-var version = '1.5.0';
+    if (parts[0] == 't!role') {
+        if (!parts[1]) return message.channel.send('Es fehlt das zweite Argument! [add/remove]')
 
-bot.on('ready', () => {
-    console.log('Der Bot ist nun EinsatzBereit')
+        if (parts[1] == 'add') {
+            if (!parts[2]) return message.channel.send('Dir fehlt das dritte Argument! [testrolle1/testrolle2/testrolle3]')
 
-    bot.user.setActivity('t!help', { type: 'PLAYING'}).catch(console.error)
+            if (parts[2] == 'testrolle1') {
+                message.member.roles.add(Test1)
+                message.channel.send('Du hast nun die Testrolle 1')
+            }
+            else if (parts[2] == 'testrolle2') {
+                message.member.roles.add(Test2)
+                message.channel.send('Du hast nun die Testrolle 2')
+            }
+            else if (parts[2] == 'testrolle3') {
+                message.member.roles.add(Test3)
+                message.channel.send('Du hast nun die Testrolle 3')
+            }
+        }
+        else if (parts[1] == 'remove') {
+            if (!parts[2]) return message.channel.send('Dir fehlt das dritte Argument! [testrolle1/testrolle2/testrolle3]')
+
+            if (parts[2] == 'testrolle1') {
+                message.member.roles.remove(Test1)
+                message.channel.send('Du hast nun nicht mehr die Testrolle 1')
+            }
+            else if (parts[2] == 'testrolle2') {
+                message.member.roles.remove(Test2)
+                message.channel.send('Du hast nun nicht mehr die Testrolle 2')
+            }
+            else if (parts[2] == 'testrolle3') {
+                message.member.roles.remove(Test3)
+                message.channel.send('Du hast nun nicht mehr die Testrolle 3')
+            }
+        }
+    }
+
+})
+
+bot.on('message', async message => {
+    let link = ["discord.gg", "discord.com/invite", "discordapp.com/invite", "https://", "http://"]
+
+    if (link.some(word => message.content.toLowerCase().includes(word))) {
+        if (message.member.roles.cache.find(r => r.id == chance)) {
+            message.member.roles.remove(chance)
+            return
+        }
+        if (message.channel.id == 'DEINE CHANNEL ID') return
+        await message.delete()
+        return message.channel.send('Du darfst hier keine Links reinschicken!')
+    }
 })
 
 bot.login(process.env.token)
