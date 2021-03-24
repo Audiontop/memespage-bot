@@ -46,7 +46,7 @@ bot.on('message', function(message){
 });
 
 bot.on('message', message => {
-    if (message.content === "t!meme"){
+    if (message.content === "?meme"){
         const embed = new Discord.MessageEmbed()
         got('https://www.reddit.com/r/memes/random/.json').then(response => {
             let content = JSON.parse(response.body);
