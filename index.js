@@ -404,7 +404,6 @@ bot.on('message', async message => {
 
     if (link.some(word => message.content.toLowerCase().includes(word))) {
         if (message.member.roles.cache.find(r => r.id == chance)) {
-            message.member.roles.remove(chance)
             return
         }
         if(message.channel.id == '811517449718988801') return
