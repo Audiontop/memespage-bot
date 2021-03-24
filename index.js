@@ -393,7 +393,7 @@ bot.on('message', async message => {
             message.member.roles.remove(chance)
             return
         }
-        if (message.channel.id == 'DEINE CHANNEL ID') return
+        if(message.channel.id == '811517449718988801') return
         await message.delete()
         return message.channel.send('Du darfst hier keine Links reinschicken!')
     }
