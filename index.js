@@ -394,6 +394,7 @@ bot.on('message', async message => {
             return
         }
         if(message.channel.id == '811517449718988801') return
+        if(message.channel.id == '820645410175320085') return
         await message.delete()
         return message.channel.send('Du darfst hier keine Links reinschicken!')
     }
