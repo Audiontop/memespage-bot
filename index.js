@@ -199,14 +199,6 @@ bot.on('message', function(message){
     }
 })
 
-bot.on('message', function(message){
-    if(message.content === 't!help'){
-
-        message.channel.send('du brachst hilfe mit den commands dan pass mal auf!\nmit t!ping kannst du sehen ob ich Aktiv oder Inaktiv bin!\n mit t!flip kannst du was Spielen\nund t!Avatar kannst du von dir oder von anderen leuten Sein Profilbild sehen!\nmit t!f kriegt man eine nachricht für fortnäit :fist::fist::french_bread::croissant:')
-    }
-
-});
-
 bot.on("message", function(message) {
     if(message.content === "t!flip"){
     var change = Math.floor(Math.random() * 3)
