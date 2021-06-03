@@ -385,19 +385,4 @@ bot.on('message', (message) => {
 
 })
 
-bot.on('message', async message => {
-    let link = ["discord.gg", "discord.com/invite", "discordapp.com/invite", "https://", "http://"]
-
-    if (link.some(word => message.content.toLowerCase().includes(word))) {
-        if (message.member.roles.cache.find(r => r.id == chance)) {
-            message.member.roles.remove(chance)
-            return
-        }
-        if(message.channel.id == '811517449718988801') return
-        if(message.channel.id == '820645410175320085') return
-        await message.delete()
-        return message.channel.send('Du darfst hier keine Links reinschicken!')
-    }
-})
-
 bot.login(process.env.token)
