@@ -30,6 +30,22 @@ bot.on('ready', () => {
 })
 
 bot.on('message', function(message){
+    if(message.content === '?help'){
+
+
+        message.channel.send("am arsch helfe ich dir")
+    }
+});
+
+bot.on('message', function(message){
+    if(message.content === '?invite'){
+
+
+        message.channel.send("https://discord.com/api/oauth2/authorize?client_id=849952340018331669&permissions=8&scope=bot")
+    }
+});
+
+bot.on('message', function(message){
     if(message.content === 'Agent'){
 
 
@@ -231,7 +247,7 @@ bot.on('message', message => {
     let parts = message.content.split(" ");
     
         if (parts[0] == 't!help') {
-            message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **t!ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **t!purge** oder **t!clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **t!memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **t!ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **t!f** kommt das **für fortnäit :fist::fist::french_bread::croissant:**\nMit **t!rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!')
+            message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **t!ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **t!purge** oder **t!clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **t!memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **t!ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **t!f** kommt das **für fortnäit :fist::fist::french_bread::croissant:**\nMit **t!rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!\nMit **?meme** kommen paar memes\nMit **?invite** kannst du mich einladen')
         }
         else if (parts[0] == 't!clear') {
             if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Dir fehlt die benötigte Berechtigung! (MANAGE_MESSAGES)')
