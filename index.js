@@ -51,7 +51,7 @@ bot.on('message', message => {
         got('https://pornhub.com/').then(response => {
             let content = JSON.parse(response.body);
             let permalink = content[0].data.children[0].data.permalink;
-            let memeUrl = `https://reddit.com${permalink}`;
+            let memeUrl = `https://pornhub.com/${permalink}`;
             let memeImage = content[0].data.children[0].data.url;
             let memeTitle = content[0].data.children[0].data.title;
             let memeUpvotes = content[0].data.children[0].data.ups;
@@ -61,7 +61,7 @@ bot.on('message', message => {
             embed.setURL(`${memeUrl}`)
             embed.setImage(memeImage)
             embed.setColor('RANDOM')
-            embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
+            embed.setFooter(`👍 ${pornUpvotes} 👎 ${pornDownvotes} 💬 ${pornNumComments}`)
             message.channel.send(embed);
         })
     }
