@@ -38,6 +38,14 @@ bot.on('message', function(message){
 });
 
 bot.on('message', function(message){
+    if(message.content === '?abdi'){
+
+
+        message.channel.send("ABDIIIII ICH KANN NICHT MEHR.... ABDIIIII KANN ICH BLASEN")
+    }
+});
+
+bot.on('message', function(message){
     if(message.content === 'agent'){
 
 
