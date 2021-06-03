@@ -217,12 +217,6 @@ bot.on('message', message => {
         if (parts[0] == 't!help') {
             message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **t!ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **t!purge** oder **t!clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **t!memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **t!ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **t!f** kommt das **für fortnäit :fist::fist::french_bread::croissant:**\nMit **t!rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!')
         }
-        else if (parts[0] == 't!ping') {
-            message.channel.send('Pong!')
-        }
-        else if (parts[0] == 't!Ping') {
-            message.channel.send('Pong!')
-        }
         else if (parts[0] == 't!clear') {
             if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Dir fehlt die benötigte Berechtigung! (MANAGE_MESSAGES)')
             if(!parts[1]) return message.channel.send('Fehler, bitte zweites Argument angeben!')
