@@ -62,28 +62,6 @@ bot.on('message', function(message){
 });
 
 bot.on('message', message => {
-    if (message.content === "?porn"){
-        const embed = new Discord.MessageEmbed()
-        got('https://pornhub.com/').then(response => {
-            let content = JSON.parse(response.body);
-            let permalink = content[0].data.children[0].data.permalink;
-            let memeUrl = `https://pornhub.com/${permalink}`;
-            let memeImage = content[0].data.children[0].data.url;
-            let memeTitle = content[0].data.children[0].data.title;
-            let memeUpvotes = content[0].data.children[0].data.ups;
-            let memeDownvotes = content[0].data.children[0].data.downs;
-            let memeNumComments = content[0].data.children[0].data.num_comments;
-            embed.setTitle(`${memeTitle}`)
-            embed.setURL(`${memeUrl}`)
-            embed.setImage(memeImage)
-            embed.setColor('RANDOM')
-            embed.setFooter(`👍 ${pornUpvotes} 👎 ${pornDownvotes} 💬 ${pornNumComments}`)
-            message.channel.send(embed);
-        })
-    }
-})
-
-bot.on('message', message => {
     if (message.content === "?meme"){
         const embed = new Discord.MessageEmbed()
         got('https://www.reddit.com/r/memes/random/.json').then(response => {
