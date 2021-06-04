@@ -247,7 +247,7 @@ bot.on('message', message => {
     let parts = message.content.split(" ");
     
         if (parts[0] == '+help') {
-            message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **t!ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **t!purge** oder **t!clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **t!memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **t!ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **t!f** kommt das **für fortnäit :fist::fist::french_bread::croissant:**\nMit **t!rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!\nMit **?meme** kommen paar memes\nMit **?invite** kannst du mich einladen')
+            message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **+ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **+purge** oder **+clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **+memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **+ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **+f** kommt das **für fortnäit :fist::fist::french_bread::croissant:**\nMit **+rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!\nMit **?meme** kommen paar memes\nMit **?invite** kannst du mich einladen')
         }
         else if (parts[0] == '+clear') {
             if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Dir fehlt die benötigte Berechtigung! (MANAGE_MESSAGES)')
