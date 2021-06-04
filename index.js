@@ -15,11 +15,11 @@ bot.on('ready', () => {
     console.log('Der Bot ist nun Einsatzbereit!')
 
     let statuses = [
-        `t!help`,
+        `+help`,
         `memes____page auf tt`,
-        `t!ownerinfo`,
-        `t!help`,
-        `t!userinfo`,
+        `+ownerinfo`,
+        `+help`,
+        `+userinfo`,
         `?meme`
     ]
 
