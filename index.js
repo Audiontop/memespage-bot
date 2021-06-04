@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const got = require('got');
-const PREFIX = 't!';
+const PREFIX = '+';
 
 const chance = '801465438605148250'
 
@@ -100,7 +100,7 @@ bot.on('message', message => {
 })
 
 bot.on("message", message => {
-    if(message.content === ('t!userinfo')){
+    if(message.content === ('+userinfo')){
 	message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     }
 })
@@ -108,7 +108,7 @@ bot.on("message", message => {
 
 
 bot.on("message", message => {
-    if(message.content === ('t!server')){
+    if(message.content === ('+server')){
             message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
         }
 }
@@ -131,14 +131,14 @@ bot.on('message', function(message){
 });
 
 bot.on("message", message => {
-    if(message.content.startsWith('t!ping')){
+    if(message.content.startsWith('+ping')){
         message.channel.send('Pong! Dein Ping ist:'+bot.ws.ping+"ms");
     }
 
 })
 
 bot.on('message', function(message){
-    if(message.content === 't!f'){
+    if(message.content === '+f'){
 
 
         message.channel.send("für fortnäit :fist::fist::french_bread::croissant:")
@@ -146,7 +146,7 @@ bot.on('message', function(message){
 });
 
 bot.on('message', function(message){
-    if(message.content === 't!joke'){
+    if(message.content === '+joke'){
 
 
         message.channel.send('I went to a street where the houses were numbered 8k, 16k, 32k, 64k, 128k, 256k and 512k. It was a trip down Memory Lane\n“Debugging” is like being the detective in a crime drama where you are also the murderer\nThe best thing about a Boolean is that even if you are wrong, you are only off by a bit.\nA programmer puts two glasses on his bedside table before going to sleep. A full one, in case he gets thirsty, and an empty one, in case he doesn’t.\nIf you listen to a UNIX shell, can you hear the\nWhy do Java programmers have to wear glasses? Because they don’t C#.\n  What sits on your shoulder and says “Pieces of 7! Pieces of 7!”? A Parroty Error.\nWhen Apple employees die, does their life HTML5 in front of their eyes?\nWithout requirements or design, programming is the art of adding bugs to an empty text file.\nBefore software can be reusable it first has to be usable.\nThe best method for accelerating a computer is the one that boosts it by 9.8 \n.I think Microsoft named .Net so it wouldn’t show up in a Unix directory listing.\nThere are two ways to write error-free programs; only the third one works.')
@@ -154,7 +154,7 @@ bot.on('message', function(message){
 });
 
 bot.on('message', function(message){
-    if(message.content.startsWith('t!avatar')){
+    if(message.content.startsWith('+avatar')){
 
         let user = message.mentions.users.first() || message.author
         let embed = new Discord.MessageEmbed() 
@@ -182,7 +182,7 @@ bot.on('message', function(message){
 });
 
 bot.on('message', function(message){
-    if(message.content.startsWith('t!Avatar')){
+    if(message.content.startsWith('+Avatar')){
 
         let user = message.mentions.users.first() || message.author
         let embed = new Discord.MessageEmbed() 
@@ -219,7 +219,7 @@ bot.on('message', function(message){
 });
 
 bot.on('message', function(message){
-    if (message.content === "t!clear") {
+    if (message.content === "+clear") {
          if(!message.member.hasPermission("MANAGE_MESSAGES")){
              message.channel.send("Du hast keine berechtigung für Diesen Command!")
          }
@@ -232,7 +232,7 @@ bot.on('message', function(message){
 })
 
 bot.on("message", function(message) {
-    if(message.content === "t!flip"){
+    if(message.content === "+flip"){
     var change = Math.floor(Math.random() * 3)
 
     if(change == 1) {
@@ -246,18 +246,18 @@ bot.on("message", function(message) {
 bot.on('message', message => {
     let parts = message.content.split(" ");
     
-        if (parts[0] == 't!help') {
+        if (parts[0] == '+help') {
             message.channel.send('Du brauchst Hilfe mit meinen Befehlen? Dann pass mal auf!\nMit **t!ping** kannst du schauen ob ich Aktiv, oder Inaktiv bin!\nMit **t!purge** oder **t!clear** Kannst du Nachrichten von 2-100 **löschen**!\nMit **t!memberzähler** kannst du sehen wv. Mitglieder der Server hat!\nMit **t!ownerinfo** siehst du wer den Server erstellt hat, auf dem du dich befindest.\nMit **t!f** kommt das **für fortnäit :fist::fist::french_bread::croissant:**\nMit **t!rollenhilfe** kannst du dir anschauen, welche Rollen du dir selbst geben/entfernen kannst!\nMit **?meme** kommen paar memes\nMit **?invite** kannst du mich einladen')
         }
-        else if (parts[0] == 't!clear') {
+        else if (parts[0] == '+clear') {
             if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Dir fehlt die benötigte Berechtigung! (MANAGE_MESSAGES)')
             if(!parts[1]) return message.channel.send('Fehler, bitte zweites Argument angeben!')
             message.channel.bulkDelete(parts[1])
         }
-        else if (parts[0] == 't!ownerinfo') {
+        else if (parts[0] == '+ownerinfo') {
             message.channel.send(`Der Owner/Ersteller dieses Servers ist ${message.guild.owner}`)
         }
-        else if (parts[0] == 't!rolleninfo') {
+        else if (parts[0] == '+rolleninfo') {
             if (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send('Dir fehlt folgende Berechtigung: MANAGE_ROLES !')
             console.log(message.guild.roles)
             message.channel.send('Die Rolleninfo wurde an den Log geschickt!')
@@ -272,7 +272,7 @@ bot.on('message', message => {
 
             message.channel.send(baum)
         }
-        else if (parts[0] == 't!userinfo') {
+        else if (parts[0] == '+userinfo') {
             let userr = message.mentions.users.first() || message.author;
         
                 let userinfo = {}
@@ -297,13 +297,13 @@ bot.on('message', message => {
                 return message.channel.send(userembed)
                 
         }
-        else if (parts[0] == 't!say') {
+        else if (parts[0] == '+say') {
             if (!parts[1]) return message.channel.send('Du musst angeben, was der Text sein soll, den der Bot sagt!')
             var text = message.content.split(" ").slice(1).join(" ");
             message.delete();
             message.channel.send(text)
         }
-        else if (parts[0] == 't!sayemb') {
+        else if (parts[0] == '+sayemb') {
             if(!parts[1]) return message.channel.send('Du musst angeben, was der Text von deinem Embed beinhalten soll!')
             var text = message.content.split(" ").slice(1).join(" ");
             message.delete();
@@ -315,7 +315,7 @@ bot.on('message', message => {
 
             message.channel.send(sayembed)
         }
-        else if (parts[0] == 't!dm') {
+        else if (parts[0] == '+dm') {
             if (!message.mentions.users.first()) {
                 if (!parts[1]) return message.channel.send('Du musst angeben, was du dir selbst schreiben lassen möchtest!')
                 message.delete()
@@ -333,7 +333,7 @@ bot.on('message', message => {
                 message.mentions.users.first().send(text)
             }
         }
-        else if (parts[0] == 't!kick') {
+        else if (parts[0] == '+kick') {
 
             if (!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send('Dir fehlt folgende Berechtigung: KICK_MEMBERS')
 
@@ -349,7 +349,7 @@ bot.on('message', message => {
 
             message.channel.send(kickemb)
         }
-        else if (parts[0] == 't!ban') {
+        else if (parts[0] == '+ban') {
 
             if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('Dir fehlt folgende Berechtigung: BAN_MEMBERS')
 
@@ -372,7 +372,7 @@ bot.on('message', message => {
 bot.on('message', (message) => {
     const parts = message.content.split(" ");
 
-    if (parts[0] == 't!role') {
+    if (parts[0] == '+role') {
         if (!parts[1]) return message.channel.send('Es fehlt das zweite Argument! [add/remove]')
 
         if (parts[1] == 'add') {
