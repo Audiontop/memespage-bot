@@ -78,7 +78,7 @@ bot.on('message', function(message){
 });
 
 bot.on('message', message => {
-    if (message.content === "?meme"){
+    if (message.content === "?porn"){
         const embed = new Discord.MessageEmbed()
         got('https://www.reddit.com/r/porninfifteenseconds/random/.json').then(response => {
             let content = JSON.parse(response.body);
