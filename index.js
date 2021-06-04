@@ -37,6 +37,16 @@ bot.on('message', function(message){
     }
 });
 
+bot.on("guildMemberRemove", function(member){
+    let channel = member.guild.channels.cache.find(ch => ch.name === "test");
+    channel.send(member.displayName + "hat den Server verlassen!");
+})
+
+bot.on("guildMemberAdd", function(member){
+    let channel = member.guild.channels.cache.find(ch => ch.name === "test");
+    channel.send(member.displayName + "ist dem Server beigetreten!");
+})
+
 bot.on('message', function(message){
     if(message.content === '?invite'){
 
